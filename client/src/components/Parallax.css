@@ -1,0 +1,100 @@
+main {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+.bg-img {
+  position: absolute;
+  width: 3800px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+.overlay {
+  z-index: 10;
+  position: absolute;
+  width: 2800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.rays {
+  z-index: 9;
+  position: absolute;
+  width: 2800px;
+  opacity: 0.4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.m05 {
+  position: absolute;
+  width: 2800px;
+  top: 63.3%;
+  left: 50%;
+  z-index: 6;
+}
+.m04 {
+  position: absolute;
+  width: 445px;
+  top: 57%;
+  left: 14.5%;
+  z-index: 5;
+}
+.m03 {
+  position: absolute;
+  width: 380px;
+  top: 54.4%;
+  left: 87.8%;
+  z-index: 4;
+}
+.m02 {
+  position: absolute;
+  width: 1090px;
+  top: 71.7%;
+  left: 35.3%;
+  z-index: 2;
+}
+.text {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  pointer-events: auto;
+  top: calc(50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text h1 {
+  font-size: 150px;
+}
+::selection {
+  background: #353535;
+}
+.m01 {
+  position: absolute;
+  width: 650px;
+  top: 43%;
+  left: 29%;
+  z-index: 1;
+}
+.viniete {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(0, 0, 0, 0.6)
+  ); */
+  z-index: 100;
+}
+.parallax {
+  pointer-events: none;
+  transition: 0.45s;
+}
+/* transform: translate(-50%, -50%); */
