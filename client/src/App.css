@@ -17,14 +17,10 @@
   font-family: "Poppins", sans-serif;
 }
 .hero {
-  background-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.3)
-    ),
-    url("./assets/images/black-white-background.jpg");
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./assets/images/bg.jpg") fixed;
   background-size: cover;
-  background-position: fixed;
+  background-position: center;
 }
 
 .btn {
@@ -35,7 +31,7 @@
   border: 1px solid var(--c-main);
   border-radius: 50px;
   min-width: 180px;
-  transition: 0.5s;
+  transition: 0.4s;
   position: relative;
   overflow: hidden;
 }
@@ -49,7 +45,7 @@
   position: absolute;
   border: none;
   border-radius: none;
-  transition: 0.5s ease-in-out;
+  transition: 0.4s ease-in-out;
   overflow: hidden;
   align-items: center;
   justify-content: center;
