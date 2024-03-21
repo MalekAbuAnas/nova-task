@@ -28,18 +28,18 @@ export default function Hero() {
       <Navbar />
       <div className="hero w-full h-[100vh] items-center justify-center text-center flex flex-col space-y-12">
         <h1
-          className="prlx text-[#fff] text-[130px] top-[50%] left-[50%] duration-500 ease-out cursor-pointer selection:bg-c-main"
-          data-speedx="0.025"
-          data-speedy="0.085"
+          className="prlx text-[#fff] text-[130px] top-[50%] left-[50%] ease-out cursor-pointer selection:bg-c-main"
+          data-speedx="0.007"
+          data-speedy="0.02"
+          style={{ transition: "0.45s cubic-bezier(.23,.57,.34,.99)" }}
         >
           Task <span className="text-c-sec">Man</span>
         </h1>
-        <h3 className="text-[#fff]" data-speedx="0.025" data-speedy="0.085">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-          veritatis.
+        <h3 className="text-[#fff]" data-speedx="0.015" data-speedy="0.085">
+          Simplify Your Schedule, Amplify Your Achievements
         </h3>
         <div className="btns w-full h-fit space-x-10 prlx top-[50%] left-[50%]">
-          <button data-content="For Easier Life" className="btn">
+          <button data-content="Go to sign up" className="btn">
             Get Started
           </button>
           <button data-content="Get to Know Us" className="btn">
