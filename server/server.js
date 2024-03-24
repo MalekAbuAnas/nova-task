@@ -118,6 +118,46 @@ app.delete("/deleteuser/:userId", async (req, res) => {
   }
 });
 
+// // Log-in
+// app.get("/login", async (req, res) => {
+//   const { email, password } = req.body;
+
+//   const exUser = await Users.findOne({ email: email, password: password });
+//   if (!exUser) {
+//     return res.status(404).json({ message: "Email or password are incorrect" });
+//   }
+//   res.json(exUser);
+// });
+app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // checking for email and password
+    if (!email || !password) {
+      return res
+        .status(400)
+        .json({ message: "Please provide email and password" });
+    }
+
+    // checking if the user exists
+    const user = await Users.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // checking if the password is correct
+    if (user.password !== password) {
+      return res.status(401).json({ message: "Incorrect password" });
+    }
+
+    // if everything is correct, return user information
+    res.status(200).json({ message: "Login successful", user });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
