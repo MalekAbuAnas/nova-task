@@ -1,12 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { API } from "../App";
+import { useLocation, useNavigate } from "react-router-dom";
+import { EndTransition } from "../components";
+// import { Link } from "react-router-dom";
+import Transition from "../components/Transition";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
+  const [transition, setTransition] = useState(true);
+  const [transition2, setTransition2] = useState(false);
+
+  const location = useLocation();
+  // const { transText, trans2Text } = location.state;
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTransition(false);
+    }, 500);
+  }, []);
+
+  const navigator = useNavigate();
 
   const createUser = () => {
     if (password === repassword) {
@@ -101,9 +118,26 @@ export default function Signup() {
                 Cancel
               </button>
             </div>
+            <h1
+              className="font-light duration-500 hover:text-c-sec"
+              onClick={() => {
+                setTransition2(true);
+                setTimeout(() => {
+                  navigator("/sign-in");
+                }, 900);
+              }}
+            >
+              Already have an accound ?
+            </h1>
           </form>
         </div>
       </div>
+      <Transition
+        transition={transition2}
+        text={"Task Man"}
+        text2={"Enhance you productivity, Manage your life"}
+      />
+      <EndTransition transition={transition} />
     </div>
   );
 }

@@ -8,12 +8,9 @@ export default function Transition({ transition, text, text2 }) {
       } z-[11] items-center flex overflow-hidden text-nowrap`}
     >
       <div className="left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] absolute space-y-10">
-        <h1 className="text-5xl text-[#000]">{text}</h1>
+        <h1 className="text-6xl text-[#000]">{text}</h1>
         <h3 className="text-3xl text-[#000]">{text2}</h3>
       </div>
     </div>
   );
-}
-{
-  /*  */
 }

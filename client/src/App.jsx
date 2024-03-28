@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Landing, Signin, Signup, Test } from "./pages/index";
+import { Landing, Signin, Signup, Home } from "./pages/index";
 
 export const API = "http://localhost:3000";
 
@@ -10,7 +10,7 @@ function App() {
       <Route path="/" element={<Landing />} />
       <Route path="/sign-up" element={<Signup />} />
       <Route path="/sign-in" element={<Signin />} />
-      <Route path="/test" element={<Test />} />
+      <Route path="/home" element={<Home />} />
     </Routes>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Transition from "./Transition";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const [xValue, setXValue] = useState(0);
@@ -27,6 +28,17 @@ export default function Hero() {
     });
   });
 
+  const navigate = useNavigate();
+
+  const handleTransition = () => {
+    setTransText("Task Man");
+    setTrans2Text("Enhance you productivity, Manage your life");
+    setTransition(true);
+    setTimeout(() => {
+      navigate("/sign-up", { state: { transText, trans2Text } });
+    }, 900);
+  };
+
   return (
     <>
       <Navbar />
@@ -50,11 +62,7 @@ export default function Hero() {
           <button
             data-content="Go to sign up"
             className="btn"
-            onClick={() => {
-              setTransText("Welcome to our family .");
-              setTrans2Text("Taskman Niggas");
-              setTransition(true);
-            }}
+            onClick={handleTransition}
           >
             Get Started
           </button>
@@ -71,6 +79,3 @@ export default function Hero() {
     </>
   );
 }
-// el.style.transform = `translateX(calc(-60% + ${
-//   -xValue * speedx
-// }px)) translateY(calc(-50% + ${yValue * speedy}px))`;
